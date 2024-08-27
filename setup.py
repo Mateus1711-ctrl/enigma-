@@ -8,7 +8,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name="enigma",  # Nome do seu pacote
     version="0.1.0",
-    author="Matheus Porto, Vitor Raia",
+    author="Mateus Porto, Vitor Raia",
     author_email="vitortr@al.insper.edu.br",
     description="Um pacote minimalista em Python",
     long_description=long_description,
