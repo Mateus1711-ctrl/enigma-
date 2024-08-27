@@ -11,8 +11,8 @@ indice_para_char = {idx: char for idx, char in enumerate(alfabeto)}
 
 def para_one_hot(mensagem):
 
-    T = len(mensagem)
-    M = np.zeros((n, T))
+    colunas = len(mensagem)
+    M = np.zeros((n, colunas))
     for i, char in enumerate(mensagem):
         if char in char_para_indice:
             M[char_para_indice[char], i] = 1
@@ -27,11 +27,14 @@ def para_string(M):
 def cifrar(mensagem, P):
     M = para_one_hot(mensagem)
     M_cifrada = np.dot(P, M)
-    return para_string(M_cifrada)  
+    return para_string(M_cifrada) 
 
 
 def decifrar(mensagem, P):
     M = para_one_hot(mensagem)
     P_inv = np.linalg.inv(P)
-    M_original = np.dot(P_inv, M)
-    return para_string(M_original)
+    M_decifrada = np.dot(P_inv, M)
+    return para_string(M_decifrada)
+
+
+
