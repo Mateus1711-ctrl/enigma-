@@ -31,8 +31,7 @@ def cifrar(mensagem, P):
 
 
 def decifrar(mensagem, P):
-    """Recupera uma mensagem cifrada utilizando a matriz de permutação inversa"""
     M = para_one_hot(mensagem)
-    P_inv = np.linalg.inv(P).astype(int)
+    P_inv = np.linalg.inv(P)
     M_original = np.dot(P_inv, M)
     return para_string(M_original)
