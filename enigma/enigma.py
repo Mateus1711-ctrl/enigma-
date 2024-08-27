@@ -23,3 +23,16 @@ def para_string(M):
     indices = np.argmax(M, axis=0)
     return ''.join(indice_para_char[idx] for idx in indices)
 
+
+def cifrar(mensagem, P):
+    M = para_one_hot(mensagem)
+    M_cifrada = np.dot(P, M)
+    return para_string(M_cifrada)  
+
+
+def decifrar(mensagem, P):
+    """Recupera uma mensagem cifrada utilizando a matriz de permutação inversa"""
+    M = para_one_hot(mensagem)
+    P_inv = np.linalg.inv(P).astype(int)
+    M_original = np.dot(P_inv, M)
+    return para_string(M_original)
