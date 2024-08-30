@@ -37,4 +37,26 @@ def decifrar(mensagem, P):
     return para_string(M_decifrada)
 
 
+def enigma(msg: str, P: np.array, E: np.array):
+    mensagem_cifrada = []
+    P_current = P.copy()  
+    lista_de_permutacoes = []  
+    
+    for c in msg:
+        mensagem_cifrada.append(cifrar(c, P_current))
+        lista_de_permutacoes.append(P_current.copy())
+        P_current = np.dot(P_current, E)  
+    
+    return ''.join(mensagem_cifrada), lista_de_permutacoes
 
+
+
+
+def de_enigma(msg: str, lista_de_permutacoes: list):
+    mensagem_decifrada = []
+    
+    for i, c in enumerate(msg):
+        P_current = lista_de_permutacoes[i]
+        mensagem_decifrada.append(decifrar(c, P_current))
+    
+    return ''.join(mensagem_decifrada)
