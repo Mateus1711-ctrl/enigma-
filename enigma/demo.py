@@ -2,7 +2,7 @@ import numpy as np
 from enigma import para_one_hot, para_string, cifrar, decifrar, enigma, de_enigma
 
 def main():
-    mensagem = "o bolo de chocolate fica pronto quatro horas da tarde"
+    mensagem = "exemplo para aula de algebra linear"
     alfabeto = "abcdefghijklmnopqrstuvwxyz "
     n = len(alfabeto)
     
