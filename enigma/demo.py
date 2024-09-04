@@ -2,8 +2,8 @@ import numpy as np
 from enigma import para_one_hot, para_string, cifrar, decifrar, enigma, de_enigma
 
 def main():
-    mensagem = "exemplo para aula de algebra linear"
-    alfabeto = "abcdefghijklmnopqrstuvwxyz "
+    mensagem = "exemplo para aula de álgebra linear"
+    alfabeto = "abcdefghijklmnopqrstuvwxyzáéíóúãõâêîôûçàèìòùäëïöüñ .,!?;:()'\"-0123456789"
     n = len(alfabeto)
     
     P = np.eye(n)[np.random.permutation(n)]
